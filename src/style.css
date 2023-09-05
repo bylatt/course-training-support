@@ -87,3 +87,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.nav ul {
+  padding: 0;
+}
+
+.nav ul li{
+  display: inline-block;
+  align-items: center;
+  padding-right: .6rem;
+}
