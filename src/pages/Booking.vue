@@ -32,6 +32,7 @@
   </template>
 
 <script>
+import * as api from '../api.js'
 export default {
   data() {
     return {
@@ -49,12 +50,11 @@ export default {
       // Handle booking logic here
       console.log('Booking confirmed!');
 
-      api.getCourses().then(result => {
+      api.submitBooking('LzavWkfZAw1sqS4Hibz5').then(result => {
         console.log(result)
     }).catch(err => {
         console.log(err)
     })
-    console.log(api)
 
     },
   },
