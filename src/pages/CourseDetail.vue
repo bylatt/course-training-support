@@ -13,7 +13,7 @@
       <p class="time-period">{{ course.timePeriod }}</p>
 
       <!-- Yellow Button (Sticky at Bottom) -->
-      <button class="yellow-button">Open Course</button>
+      <button class="yellow-button">View Class Schedule</button>
   </div>
 </template>
 
@@ -89,6 +89,7 @@ export default {
   cursor: pointer;
   position: sticky;
   bottom: 0;
+  max-width: 100%;
   margin-bottom: 20px; /* Add some margin for spacing */
 }
 </style>
