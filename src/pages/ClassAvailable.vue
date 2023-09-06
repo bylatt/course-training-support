@@ -12,29 +12,54 @@
     <!-- Card-->
 
     <div class="card border-0">
-      <div class="position-relative">
+    <div style="width: 343px; height: 136px; position: relative">
+<div style="width: 343px; height: 136px; left: 0px; top: 0px; position: absolute">
+  <div style="width: 343px; height: 136px; left: 0px; top: 0px; position: absolute">
+    <div style="width: 343px; height: 136px; padding: 24px; left: 0px; top: 0px; position: absolute; background: white; box-shadow: 0px 11px 20px rgba(5, 16, 55, 0.10); border-radius: 6px"></div>
+    <div style="width: 58px; height: 21px; left: 40px; top: 67px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word">Odd-E</div>
+    <div style="width: 168px; height: 26px; left: 16px; top: 16px; position: absolute; color: black; font-size: 18px; font-family: Kanit; font-weight: 700; line-height: 24px; word-wrap: break-word">6-7 Sep 2023  <br/></div>
+  </div>
+  <div style="width: 81px; height: 44px; padding-top: 11px; padding-bottom: 12px; padding-left: 14px; padding-right: 14px; left: 246px; top: 16px; position: absolute; background: #EEB51F; border-radius: 6px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+    <div style="text-align: center; color: white; font-size: 14px; font-family: Kanit; font-weight: 500; word-wrap: break-word">Booking</div>
+  </div>
+  <div style="width: 151.09px; height: 23.17px; left: 16px; top: 97px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 500; word-wrap: break-word">Trainer: Chacha</div>
+  <div style="width: 51px; height: 16px; padding-left: 12px; padding-right: 12px; padding-top: 2px; padding-bottom: 2px; left: 276px; top: 100px; position: absolute; background: #C8FFC7; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+    <div style="text-align: right; color: #0D7D0B; font-size: 12px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word"> 10/12</div>
+  </div>
+</div>
+<div style="width: 148px; height: 18px; left: 40px; top: 45px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word">10.00-11.00 a.m.</div>
+<div style="width: 16px; height: 16px; left: 16px; top: 48px; position: absolute">
+  <div style="width: 13.33px; height: 13.33px; left: 1.33px; top: 1.33px; position: absolute; background: #1E202C"></div>
+</div>
+<div style="width: 16px; height: 16px; left: 16px; top: 70px; position: absolute">
+  <div style="width: 9.33px; height: 13.33px; left: 3.33px; top: 1.33px; position: absolute; background: #1E202C"></div>
+</div>
+<div style="width: 12px; height: 12px; left: 279px; top: 102px; position: absolute">
+  <div style="width: 8.44px; height: 8.72px; left: 1.78px; top: 1.88px; position: absolute; background: #1E202C"></div>
+</div>
+</div>
 
-      </div>
-      <div class="card-body">
-
-        <h5 class="card-title">Class name</h5>
-        <p class="card-text">Time: </p>
-        <hr>
-      </div>
-      <div class="card-footer">
-        <div class="media align-items-center">
-          <div class="mb-3"><a class="card-link text-primary read-more" href="javascript://">Booking</a></div>
-          <div class="footerright">
-            <div class="tnlink3"><i class="fas fa-heart" aria-hidden="true"></i></div>
-            <div class="tnlink3"><i class="fas fa-share-nodes" aria-hidden="true"></i></div>
-          </div>
-        </div>
-      </div>
     </div>
 
   </div>
 </div>
 </template>
+
+<script setup>
+import { ref, onMounted } from 'vue'
+import * as api from '../api.js'
+let courses = ref([])
+onMounted(() => {
+    api.getClasses().then(result => {
+        courses.value = result
+        console.log(result)
+    }).catch(err => {
+        console.log(err)
+    })
+    console.log(api)
+    console.log('mounted')
+})
+</script>
 
 <style>
 /*** Body ***/
@@ -70,6 +95,7 @@ body .footer {
     margin-top: auto;
 }
 
+/*
 .card {
     position: relative;
     flex-direction: column;
@@ -80,6 +106,7 @@ body .footer {
     border: 1px solid #00000020;
     border-radius: 0.8rem;
 }
+/*
 
 .card-footer,
 .card-img {
@@ -341,6 +368,7 @@ i.pr-1 {
     font-weight: 400;
 }
 
+/*
 .card.border-0 {
     box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d !important;
     background: hsl(220deg 14% 97%) !important;
@@ -352,6 +380,7 @@ i.pr-1 {
     transition: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     color: #000 !important;
 }
+*/
 
 .read-more {
     border-radius: 5px !important;
