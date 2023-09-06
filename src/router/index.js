@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
 import About from "../pages/About.vue";
 import Course from "../pages/Course.vue";
-
+import Booking from "../pages/Booking.vue";
+import ClassAvailable from "../pages/ClassAvailable.vue";
 const routes = [
   {
     path: "/",
@@ -23,6 +24,11 @@ const routes = [
     path: "/class_available",
     name: "ClassAvailable",
     component: ClassAvailable,
+  },
+  {
+    path: "/booking",
+    name: "Booking",
+    component: Booking,
   }
 ];
 
