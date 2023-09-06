@@ -45,8 +45,21 @@ export async function getClassName(id) {
   return getCourse(courseId).title;
 }
 
-export async function createBooking(id) {
-  
+async function createBooking(obj) {
+  if(obj == null) {
+    console.log("no booking object");
+  }
+
+  let bookingData = {
+    booking_date: "",
+    class_id: "",
+    course_id: 1,
+    email: obj.email,
+    name: obj.name,
+    company: obj.company,
+    location_name: obj.location_name
+  }
+  await setDoc(collection(db, "booking"), bookingData);
 }
 
 export async function submitBooking(id) {
