@@ -16,6 +16,9 @@ onMounted(() => {
 
 <template>
     <div v-for="course in courses">
-        {{ course.title }}
+        <div class="title">
+            <h3>{{ course.title }} - {{ course.duration }}</h3>
+        </div>
+        <div class="body">{{ course.description }}</div>
     </div>
 </template>
