@@ -52,12 +52,16 @@ async function createBooking(obj) {
 
   let bookingData = {
     booking_date: "",
+    booking_time: "",
     class_id: "",
+    company_name: "",
     course_id: 1,
+    course_name: "",
     email: obj.email,
+    location_name: obj.location_name,
     name: obj.name,
-    company: obj.company,
-    location_name: obj.location_name
+    phone_number: obj.phone_number,
+    trainer: obj.trainer,
   }
   await setDoc(collection(db, "booking"), bookingData);
 }
@@ -70,7 +74,7 @@ export async function submitBooking(id) {
     updateAvailableSeatByClassId(id);
     console.log("Update one seat");
   } else {
-    // call waiting list
+    console.log("Booking Full")
   }
 
   return availableSeat;
