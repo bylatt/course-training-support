@@ -18,6 +18,11 @@ const routes = [
     path: "/courses",
     name: "Courses",
     component: Course,
+  },
+  {
+    path: "/class_available",
+    name: "ClassAvailable",
+    component: ClassAvailable,
   }
 ];
 
