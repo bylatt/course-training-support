@@ -39,21 +39,36 @@ export async function getCourse(id) {
 }
 
 export async function getClassName(id) {
-  const docRef = doc(db, "classes", id);
-  const docSnap = await getDoc(docRef);
+  let classes = getClasseById(id);
+  let courseId = classes.courseId;
 
-  let courseId = docSnap.data().courseId;
   return getCourse(courseId).title;
 }
 
-export async function submitBooking(id) {
-  const docRef = doc(db, "classes", id);
-  const docSnap = await getDoc(docRef);
+async function createBooking(obj) {
+  if(obj == null) {
+    console.log("no booking object");
+  }
 
-  let availableSeat = docSnap.data().availableSeat;
+  let bookingData = {
+    booking_date: "",
+    class_id: "",
+    course_id: 1,
+    email: obj.email,
+    name: obj.name,
+    company: obj.company,
+    location_name: obj.location_name
+  }
+  await setDoc(collection(db, "booking"), bookingData);
+}
+
+export async function submitBooking(id) {
+  let classes = getClasseById(id);
+  let availableSeat = classes.availableSeat;
 
   if (availableSeat > 0) {
-    // call booking
+    updateAvailableSeatByClassId(id);
+    console.log("Update one seat");
   } else {
     // call waiting list
   }
