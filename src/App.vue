@@ -12,6 +12,7 @@
       </li>
       <li>
         <router-link to="/waitingList">Waiting list</router-link>
+        <router-link to="/class_available">Class Available</router-link>
       </li>
     </ul>
   </div>
