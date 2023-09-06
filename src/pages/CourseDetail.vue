@@ -1,7 +1,7 @@
 <template>
   <div>
       <!-- Course Banner Image -->
-      <img :src="course.imageUrl" alt="Course Banner" class="course-banner">
+      <img :src="course.image" alt="Course Banner" class="course-banner">
 
       <!-- Course Title -->
       <h1 class="course-title">{{ course.title }}</h1>
@@ -13,21 +13,42 @@
       <p class="time-period">{{ course.timePeriod }}</p>
 
       <!-- Yellow Button (Sticky at Bottom) -->
-      <button class="yellow-button">Open Course</button>
+      <button class="yellow-button">View Class Schedule</button>
   </div>
 </template>
 
 <script>
+import * as api from '../api.js';
 export default {
   data() {
     return {
-      course: {
-        imageUrl: 'https://s3.amazonaws.com/thumbnails.venngage.com/template/b574ec3f-672a-4bc9-9457-4bc7f0e1d982.png', // Replace with your course image URL
-        title: 'Course Title',
-        description: 'Course Description',
-        timePeriod: 'Period: 2 days',
-      },
+      loading: false,
+      course: null,
+      error: null,
     };
+  },
+  created() {
+    this.$watch(
+      () => this.$route.params,
+      () => {
+        this.fetchData()
+      },
+      { immediate: true }
+    )
+  },
+  methods: {
+    fetchData() {
+      this.error = this.course = null
+      this.loading = true
+      api.getCourse(this.$route.params.id).then(result => {
+        this.loading = false
+        this.course = result
+        console.log(this.course)
+      }).catch(err => {
+        this.loading = false
+        this.error = err
+      })
+    }
   }
 };
 </script>
@@ -68,6 +89,7 @@ export default {
   cursor: pointer;
   position: sticky;
   bottom: 0;
+  max-width: 100%;
   margin-bottom: 20px; /* Add some margin for spacing */
 }
 </style>
