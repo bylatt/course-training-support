@@ -33,7 +33,7 @@ const routes = [
     component: Waiting,
   },
   {
-    path: "/class_available",
+    path: "/class_available/:id",
     name: "ClassAvailable",
     component: ClassAvailable,
   },
