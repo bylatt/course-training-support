@@ -12,6 +12,8 @@
       <!-- Time Period -->
       <p class="time-period">{{ course.timePeriod }}</p>
 
+      <div class="content" v-html="course.detail"></div>
+
       <!-- Yellow Button (Sticky at Bottom) -->
       <button class="yellow-button">Open Course</button>
   </div>
@@ -90,5 +92,13 @@ export default {
   position: sticky;
   bottom: 0;
   margin-bottom: 20px; /* Add some margin for spacing */
+}
+
+img {
+  width: 100%;
+}
+
+.content {
+  text-align: left;
 }
 </style>
