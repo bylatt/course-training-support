@@ -5,7 +5,7 @@ import {
   collection,
   getDocs,
   getFirestore,
-  query,
+  doc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -38,6 +38,19 @@ export async function getCourse(id) {
   return docSnap.data();
 }
 
+export async function submitBooking(id) {
+  // query class API
+  const docRef = doc(db, "classes", id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+
+  // check avaialble seat
+
+  // call booking
+
+  // call waitinglist
+}
+
 async function getClasses() {
   const snapshot = await getDoc(collection(db, "classes"));
   return snapshot.map((doc) => doc.data());
@@ -66,4 +79,5 @@ async function updateAvailableSeatByClassId(id) {
   return docSnap.data();
 }
 
+// export default { getCourses, getCourse };
 export default { getCourses, getCourse, getClasses, getClasseById, getTrainers, getTrainerById, updateAvailableSeatByClassId };
