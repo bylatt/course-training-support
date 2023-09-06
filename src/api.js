@@ -45,36 +45,34 @@ export async function getClassName(id) {
   return getCourse(courseId).title;
 }
 
-async function createBooking(obj) {
+async function createBooking(bookingObj, courseObj) {
   if(obj == null) {
     console.log("no booking object");
   }
 
   let bookingData = {
-    booking_date: "",
-    booking_time: "",
-    class_id: "",
-    company_name: "",
-    course_id: 1,
-    course_name: "",
-    email: obj.email,
-    location_name: obj.location_name,
-    name: obj.name,
-    phone_number: obj.phone_number,
-    trainer: obj.trainer,
+    booking_date: new Date(),
+    class_id: bookingObj.classId,
+    company_name: bookingObj.company,
+    email: bookingObj.email,
+    name: bookingObj.name,
+    phone_number: bookingObj.phoneNumber,
   }
   await setDoc(collection(db, "booking"), bookingData);
 }
 
-export async function submitBooking(id) {
-  let classes = getClasseById(id);
+export async function submitBooking(obj) {
+  if(obj == null) {
+    console.log("no booking object");
+  }
+
+  let classes = getClasseById(obj.classId);
   let availableSeat = classes.availableSeat;
 
   if (availableSeat > 0) {
+    createBooking(obj)
     updateAvailableSeatByClassId(id);
     console.log("Update one seat");
-  } else {
-    console.log("Booking Full")
   }
 
   return availableSeat;
