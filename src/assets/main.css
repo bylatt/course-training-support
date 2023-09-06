@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
 
 body {
     font-family: 'Kanit' sans-serif;
@@ -10,18 +10,32 @@ body {
     line-height: 24px;
     /* 150% */
 }
-
+.course-container{
+}
 .list-items {
+    vertical-align: top;
+    display: inline-block;
     border-radius: 6px;
     background: var(--default-white, #FFF);
 
     /* Box Shadows/Small */
     box-shadow: 0px 11px 20px 0px rgba(5, 16, 55, 0.10);
+    margin-left: 15px;
+    margin-right: 15px;
     margin-bottom: 24px;
     padding-bottom: 24px;
-    width: 100%;
+    width: 30%;
     max-width: 375px;
+    text-align: left;
 }
+@media screen and (max-width: 768px) {
+    .list-items {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+ 
 .list-items img{
     width: 100%;
     max-width: 375px;
@@ -37,7 +51,6 @@ body {
     /* Default/Headings/h3 Bold */
     font-family: Kanit;
     font-size: 22px;
-    font-style: normal;
     font-weight: 700;
     line-height: 32px;
     /* 145.455% */
