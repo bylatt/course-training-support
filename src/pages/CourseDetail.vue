@@ -11,13 +11,9 @@
 
       <!-- Time Period -->
       <p class="time-period">{{ course.timePeriod }}</p>
-      
+
       <h1 class="course-title">Course Detail / Course Outline</h1>
-      <div>
-          <!-- Display the fetched HTML content -->
-          <div v-html=course.detail></div>
-      </div>
-      
+      <div class="content" v-html="course.detail"></div>
       <!-- Yellow Button (Sticky at Bottom) -->
       <button @click="navigateToProductPage" class="yellow-button">View Class Schedule</button>
   </div>
@@ -100,5 +96,13 @@ export default {
   bottom: 0;
   max-width: 100%;
   margin-bottom: 20px; /* Add some margin for spacing */
+}
+
+img {
+  width: 100%;
+}
+
+.content {
+  text-align: left;
 }
 </style>
