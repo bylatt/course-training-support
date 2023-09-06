@@ -48,6 +48,14 @@ export default {
     book() {
       // Handle booking logic here
       console.log('Booking confirmed!');
+
+      api.getCourses().then(result => {
+        console.log(result)
+    }).catch(err => {
+        console.log(err)
+    })
+    console.log(api)
+
     },
   },
 };
