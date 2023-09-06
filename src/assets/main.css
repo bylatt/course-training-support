@@ -22,6 +22,10 @@ body {
     width: 100%;
     max-width: 375px;
 }
+.list-items img{
+    width: 100%;
+    max-width: 375px;
+}
 
 .list-items .content {
     padding: 16px;
