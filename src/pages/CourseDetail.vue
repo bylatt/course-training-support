@@ -12,10 +12,10 @@
       <!-- Time Period -->
       <p class="time-period">{{ course.timePeriod }}</p>
 
-      <h1 class="course-title">Course Detail / Course Outline</h1>
+      <h1 class="course-title">Course Detail</h1>
       <div class="content" v-html="course.detail"></div>
       <!-- Yellow Button (Sticky at Bottom) -->
-      <button @click="navigateToProductPage" class="yellow-button">View Class Schedule</button>
+      <button @click="navigateToBookingPage(this.$route.params.id)" class="yellow-button">View Class Schedule</button>
   </div>
 </template>
 
@@ -45,14 +45,15 @@ export default {
       api.getCourse(this.$route.params.id).then(result => {
         this.loading = false
         this.course = result
+        document.title = result.title
         console.log(this.course)
       }).catch(err => {
         this.loading = false
         this.error = err
       })
     },
-    navigateToBookingPage() {
-      // Implement the navigation logic here
+    navigateToBookingPage(courseId) {
+      this.$router.push(`/class_available/${courseId}`)
     },
   }
 };

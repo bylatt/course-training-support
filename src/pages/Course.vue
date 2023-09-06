@@ -44,10 +44,10 @@ onMounted(() => {
             <h3 class="title">{{ course.title }}</h3>
             <p class="description">{{ course.description }}</p>
             <p class="duration">
-                <i class="fa-regular fa-clock"></i> {{ course.duration }}
+                <font-awesome-icon icon="fa-solid fa-clock" class="icon"/> {{ course.duration }}
             </p>
             <router-link :to="`/courses/${course.doc_id}`">
-                View Course <i class="fa-solid fa-chevron-right"></i>
+                View Course <font-awesome-icon icon="fa-solid fa-chevron-right" />
             </router-link>
         </div>
     </div>
