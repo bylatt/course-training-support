@@ -39,21 +39,23 @@ export async function getCourse(id) {
 }
 
 export async function getClassName(id) {
-  const docRef = doc(db, "classes", id);
-  const docSnap = await getDoc(docRef);
+  let classes = getClasseById(id);
+  let courseId = classes.courseId;
 
-  let courseId = docSnap.data().courseId;
   return getCourse(courseId).title;
 }
 
-export async function submitBooking(id) {
-  const docRef = doc(db, "classes", id);
-  const docSnap = await getDoc(docRef);
+export async function createBooking(id) {
+  
+}
 
-  let availableSeat = docSnap.data().availableSeat;
+export async function submitBooking(id) {
+  let classes = getClasseById(id);
+  let availableSeat = classes.availableSeat;
 
   if (availableSeat > 0) {
-    // call booking
+    updateAvailableSeatByClassId(id);
+    console.log("Update one seat");
   } else {
     // call waiting list
   }
