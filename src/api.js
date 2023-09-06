@@ -5,7 +5,7 @@ import {
   collection,
   getDocs,
   getFirestore,
-  query,
+  doc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -37,6 +37,7 @@ export async function getCourse(id) {
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 }
+<<<<<<< HEAD
 
 export async function submitBooking(id) {
   // query class API
@@ -52,3 +53,5 @@ export async function submitBooking(id) {
 }
 
 // export default { getCourses, getCourse };
+=======
+>>>>>>> ced670b1134ecd96387ed5bbc1696f8258a48d8e
