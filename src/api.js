@@ -6,6 +6,7 @@ import {
   getDocs,
   getFirestore,
   doc,
+  addDoc
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -45,20 +46,22 @@ export async function getClassName(id) {
   return getCourse(courseId).title;
 }
 
-async function createBooking(bookingObj, courseObj) {
+async function createBooking(obj) {
   if(obj == null) {
     console.log("no booking object");
   }
 
   let bookingData = {
     booking_date: new Date(),
-    class_id: bookingObj.classId,
-    company_name: bookingObj.company,
-    email: bookingObj.email,
-    name: bookingObj.name,
-    phone_number: bookingObj.phoneNumber,
+    class_id: obj.classId,
+    company_name: obj.company,
+    email: obj.email,
+    name: obj.name,
+    phone_number: obj.phoneNumber,
   }
-  await setDoc(collection(db, "booking"), bookingData);
+
+  console.log(bookingData);
+  await addDoc(collection(db, "booking"), bookingData);
 }
 
 export async function submitBooking(obj) {
@@ -66,16 +69,15 @@ export async function submitBooking(obj) {
     console.log("no booking object");
   }
 
-  let classes = getClasseById(obj.classId);
+  let classes = await getClasseById(obj.classId);
   let availableSeat = classes.availableSeat;
 
+
   if (availableSeat > 0) {
-    createBooking(obj)
-    updateAvailableSeatByClassId(id);
+    await createBooking(obj)
+    await updateAvailableSeatByClassId(obj.classId);
     console.log("Update one seat");
   }
-
-  return availableSeat;
 }
 
 export async function getClasses() {

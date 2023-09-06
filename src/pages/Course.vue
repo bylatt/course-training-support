@@ -14,6 +14,22 @@ onMounted(() => {
     });
   console.log(api);
   console.log("mounted");
+
+  // console.log("=========== Booking Testing ===========");
+  // let bookingObj = {
+  //     name: 'Fiilm Filmm',
+  //     email: 'paphawee@appsynth.net',
+  //     phoneNumber: '08123456789',
+  //     company: 'Appsynth',
+  //     classId: 'LzavWkfZAw1sqS4Hibz5',
+  //     className: 'Hello World',
+  //   }
+  // api.submitBooking(bookingObj).then(result => {
+  //   console.log(result)
+  // }).catch(err => {
+  //     console.log(err)
+  // })
+  // console.log("=========== Booking Testing ===========");
 });
 </script>
 

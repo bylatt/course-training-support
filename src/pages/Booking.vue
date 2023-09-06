@@ -69,9 +69,9 @@ export default {
 
       api.submitBooking('LzavWkfZAw1sqS4Hibz5').then(result => {
         console.log(result)
-    }).catch(err => {
-        console.log(err)
-    })
+      }).catch(err => {
+          console.log(err)
+      })
 
     },
   },
