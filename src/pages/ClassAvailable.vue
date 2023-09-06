@@ -1,48 +1,44 @@
 <template>
-<h5 class="card-title">Course name</h5>
-<p class="card-text">Course subname</p>
-<p class="card-text">Course detail</p>
-<hr>
-<!-- Content-->
-<div class="container">
-  <!-- Title-->
-  <!-- Card columns-->
-  <div class="card-columns">
-
-    <!-- Card-->
-
-    <div class="card border-0">
-    <div style="width: 343px; height: 136px; position: relative">
-<div style="width: 343px; height: 136px; left: 0px; top: 0px; position: absolute">
-  <div style="width: 343px; height: 136px; left: 0px; top: 0px; position: absolute">
-    <div style="width: 343px; height: 136px; padding: 24px; left: 0px; top: 0px; position: absolute; background: white; box-shadow: 0px 11px 20px rgba(5, 16, 55, 0.10); border-radius: 6px"></div>
-    <div style="width: 58px; height: 21px; left: 40px; top: 67px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word">Odd-E</div>
-    <div style="width: 168px; height: 26px; left: 16px; top: 16px; position: absolute; color: black; font-size: 18px; font-family: Kanit; font-weight: 700; line-height: 24px; word-wrap: break-word">6-7 Sep 2023  <br/></div>
-  </div>
-  <div style="width: 81px; height: 44px; padding-top: 11px; padding-bottom: 12px; padding-left: 14px; padding-right: 14px; left: 246px; top: 16px; position: absolute; background: #EEB51F; border-radius: 6px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
-    <div style="text-align: center; color: white; font-size: 14px; font-family: Kanit; font-weight: 500; word-wrap: break-word">Booking</div>
-  </div>
-  <div style="width: 151.09px; height: 23.17px; left: 16px; top: 97px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 500; word-wrap: break-word">Trainer: Chacha</div>
-  <div style="width: 51px; height: 16px; padding-left: 12px; padding-right: 12px; padding-top: 2px; padding-bottom: 2px; left: 276px; top: 100px; position: absolute; background: #C8FFC7; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
-    <div style="text-align: right; color: #0D7D0B; font-size: 12px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word"> 10/12</div>
-  </div>
-</div>
-<div style="width: 148px; height: 18px; left: 40px; top: 45px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word">10.00-11.00 a.m.</div>
-<div style="width: 16px; height: 16px; left: 16px; top: 48px; position: absolute">
-  <div style="width: 13.33px; height: 13.33px; left: 1.33px; top: 1.33px; position: absolute; background: #1E202C"></div>
-</div>
-<div style="width: 16px; height: 16px; left: 16px; top: 70px; position: absolute">
-  <div style="width: 9.33px; height: 13.33px; left: 3.33px; top: 1.33px; position: absolute; background: #1E202C"></div>
-</div>
-<div style="width: 12px; height: 12px; left: 279px; top: 102px; position: absolute">
-  <div style="width: 8.44px; height: 8.72px; left: 1.78px; top: 1.88px; position: absolute; background: #1E202C"></div>
-</div>
-</div>
-
-    </div>
-
-  </div>
-</div>
+   <h5 class="card-title">Course name</h5>
+   <p class="card-text">Course subname</p>
+   <p class="card-text">Course detail</p>
+   <hr>
+   <!-- Content-->
+   <div class="container">
+      <!-- Title-->
+      <!-- Card columns-->
+      <div class="card-columns">
+         <!-- Card-->
+         <div class="card border-0">
+            <div style="width: 343px; height: 136px; position: relative">
+               <div style="width: 343px; height: 136px; left: 0px; top: 0px; position: absolute">
+                  <div style="width: 343px; height: 136px; left: 0px; top: 0px; position: absolute">
+                     <div style="width: 343px; height: 136px; padding: 24px; left: 0px; top: 0px; position: absolute; background: white; box-shadow: 0px 11px 20px rgba(5, 16, 55, 0.10); border-radius: 6px"></div>
+                     <div style="width: 58px; height: 21px; left: 40px; top: 67px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word">Odd-E</div>
+                     <div style="width: 168px; height: 26px; left: 16px; top: 16px; position: absolute; color: black; font-size: 18px; font-family: Kanit; font-weight: 700; line-height: 24px; word-wrap: break-word">6-7 Sep 2023  <br/></div>
+                  </div>
+                  <div style="width: 81px; height: 44px; padding-top: 11px; padding-bottom: 12px; padding-left: 14px; padding-right: 14px; left: 246px; top: 16px; position: absolute; background: #EEB51F; border-radius: 6px; justify-content: center; align-items: center; gap: 10px; display: inline-flex">
+                     <div style="text-align: center; color: white; font-size: 14px; font-family: Kanit; font-weight: 500; word-wrap: break-word">Booking</div>
+                  </div>
+                  <div style="width: 151.09px; height: 23.17px; left: 16px; top: 97px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 500; word-wrap: break-word">Trainer: Chacha</div>
+                  <div style="width: 51px; height: 16px; padding-left: 12px; padding-right: 12px; padding-top: 2px; padding-bottom: 2px; left: 276px; top: 100px; position: absolute; background: #C8FFC7; border-radius: 100px; justify-content: flex-start; align-items: center; gap: 10px; display: inline-flex">
+                     <div style="text-align: right; color: #0D7D0B; font-size: 12px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word"> 10/12</div>
+                  </div>
+               </div>
+               <div style="width: 148px; height: 18px; left: 40px; top: 45px; position: absolute; color: black; font-size: 14px; font-family: Kanit; font-weight: 400; line-height: 24px; word-wrap: break-word">10.00-11.00 a.m.</div>
+               <div style="width: 16px; height: 16px; left: 16px; top: 48px; position: absolute">
+                  <div style="width: 13.33px; height: 13.33px; left: 1.33px; top: 1.33px; position: absolute; background: #1E202C"></div>
+               </div>
+               <div style="width: 16px; height: 16px; left: 16px; top: 70px; position: absolute">
+                  <div style="width: 9.33px; height: 13.33px; left: 3.33px; top: 1.33px; position: absolute; background: #1E202C"></div>
+               </div>
+               <div style="width: 12px; height: 12px; left: 279px; top: 102px; position: absolute">
+                  <div style="width: 8.44px; height: 8.72px; left: 1.78px; top: 1.88px; position: absolute; background: #1E202C"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </template>
 
 <script setup>
