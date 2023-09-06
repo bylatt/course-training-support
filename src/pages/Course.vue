@@ -20,7 +20,7 @@ onMounted(() => {
 
 <template>
   <div v-for="course in courses" class="list-items">
-    <img src="{{ course.image }}" alt="Random image" />
+    <img :src="course.image" />
     <div class="content">
       <h3 class="title">{{ course.title }}</h3>
       <p class="description">{{ course.description }}</p>
