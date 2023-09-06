@@ -5,7 +5,7 @@ import {
   collection,
   getDocs,
   getFirestore,
-  query,
+  doc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -37,5 +37,3 @@ export async function getCourse(id) {
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 }
-
-// export default { getCourses, getCourse };
