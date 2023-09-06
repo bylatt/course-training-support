@@ -10,14 +10,18 @@
         <!-- Course Description -->
         <p class="course-description">{{ course.description }}</p>
 
+        <h1 class="course-detail">Course Detail</h1>
+
+        <div class="content" v-html="course.detail"></div>
+
+
         <!-- Time Period -->
         <p class="time-period">{{ course.timePeriod }}</p>
 
-        <h1 class="course-title">Course Detail / Course Outline</h1>
-        <div class="content" v-html="course.detail"></div>
         <!-- Yellow Button (Sticky at Bottom) -->
-        <button @click="navigateToProductPage" class="yellow-button">View Class Schedule</button>
+        <button @click="navigateToBookingPage(this.$route.params.id)" class="yellow-button">View Class Schedule</button>
       </div>
+      <!-- Yellow Button (Sticky at Bottom) -->
   </div>
 </template>
 
@@ -47,14 +51,15 @@ export default {
       api.getCourse(this.$route.params.id).then(result => {
         this.loading = false
         this.course = result
+        document.title = result.title
         console.log(this.course)
       }).catch(err => {
         this.loading = false
         this.error = err
       })
     },
-    navigateToBookingPage() {
-      // Implement the navigation logic here
+    navigateToBookingPage(courseId) {
+      this.$router.push(`/class_available/${courseId}`)
     },
   }
 };
@@ -75,6 +80,12 @@ export default {
   max-width: 100%;
   height: auto;
   width: 100%;
+}
+
+.course-detail {
+  font-size: 36px;
+  margin-top: 20px;
+  text-align: left;
 }
 
 .course-title {
@@ -98,7 +109,7 @@ export default {
 
 /* Yellow Button */
 .yellow-button {
-  background-color: #FECE50;
+  background-color: #eeb51f;
   color: white;
   padding: 10px 20px;
   border: none;
