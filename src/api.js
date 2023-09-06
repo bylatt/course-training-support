@@ -39,16 +39,18 @@ export async function getCourse(id) {
 }
 
 export async function submitBooking(id) {
-  // query class API
   const docRef = doc(db, "classes", id);
   const docSnap = await getDoc(docRef);
-  return docSnap.data();
 
-  // check avaialble seat
+  let availableSeat = docSnap.data().availableSeat;
 
-  // call booking
+  if (availableSeat > 0) {
+    // call booking
+  } else {
+    // call waiting list
+  }
 
-  // call waitinglist
+  return availableSeat;
 }
 
 // export default { getCourses, getCourse };
