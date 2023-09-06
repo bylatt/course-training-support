@@ -1,21 +1,23 @@
 <template>
-  <div>
+  <div class="layout">
       <!-- Course Banner Image -->
       <img :src="course.image" alt="Course Banner" class="course-banner">
 
-      <!-- Course Title -->
-      <h1 class="course-title">{{ course.title }}</h1>
+      <div class="inner">
+        <!-- Course Title -->
+        <h1 class="course-title">{{ course.title }}</h1>
 
-      <!-- Course Description -->
-      <p class="course-description">{{ course.description }}</p>
+        <!-- Course Description -->
+        <p class="course-description">{{ course.description }}</p>
 
-      <!-- Time Period -->
-      <p class="time-period">{{ course.timePeriod }}</p>
+        <!-- Time Period -->
+        <p class="time-period">{{ course.timePeriod }}</p>
 
-      <h1 class="course-title">Course Detail / Course Outline</h1>
-      <div class="content" v-html="course.detail"></div>
-      <!-- Yellow Button (Sticky at Bottom) -->
-      <button @click="navigateToProductPage" class="yellow-button">View Class Schedule</button>
+        <h1 class="course-title">Course Detail / Course Outline</h1>
+        <div class="content" v-html="course.detail"></div>
+        <!-- Yellow Button (Sticky at Bottom) -->
+        <button @click="navigateToProductPage" class="yellow-button">View Class Schedule</button>
+      </div>
   </div>
 </template>
 
@@ -60,13 +62,23 @@ export default {
 
 <style scoped>
 /* Component-specific styles */
+
+.layout {
+  width: 100%;
+  max-width: 960px;
+  background-color: white;
+}
+.inner {
+  padding: 40px;
+}
 .course-banner {
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 .course-title {
-  font-size: 24px;
+  font-size: 42px;
   margin-top: 20px;
   text-align: left;
 }
@@ -96,10 +108,6 @@ export default {
   bottom: 0;
   max-width: 100%;
   margin-bottom: 20px; /* Add some margin for spacing */
-}
-
-img {
-  width: 100%;
 }
 
 .content {
