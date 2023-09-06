@@ -27,7 +27,7 @@ export async function getCourses() {
   const snapshot = await getDocs(collection(db, "courses"));
   const result = [];
   snapshot.forEach((doc) => {
-    result.push({ id: doc.id, ...doc.data() });
+    result.push({ doc_id: doc.id, ...doc.data() });
   });
   return result;
 }
@@ -46,7 +46,7 @@ export async function getClassName(id) {
 }
 
 async function createBooking(bookingObj, courseObj) {
-  if(obj == null) {
+  if (obj == null) {
     console.log("no booking object");
   }
 
@@ -57,12 +57,12 @@ async function createBooking(bookingObj, courseObj) {
     email: bookingObj.email,
     name: bookingObj.name,
     phone_number: bookingObj.phoneNumber,
-  }
+  };
   await setDoc(collection(db, "booking"), bookingData);
 }
 
 export async function submitBooking(obj) {
-  if(obj == null) {
+  if (obj == null) {
     console.log("no booking object");
   }
 
@@ -70,7 +70,7 @@ export async function submitBooking(obj) {
   let availableSeat = classes.availableSeat;
 
   if (availableSeat > 0) {
-    createBooking(obj)
+    createBooking(obj);
     updateAvailableSeatByClassId(id);
     console.log("Update one seat");
   }
@@ -111,4 +111,12 @@ async function updateAvailableSeatByClassId(id) {
 }
 
 // export default { getCourses, getCourse };
-export default { getCourses, getCourse, getClasses, getClasseById, getTrainers, getTrainerById, updateAvailableSeatByClassId };
+export default {
+  getCourses,
+  getCourse,
+  getClasses,
+  getClasseById,
+  getTrainers,
+  getTrainerById,
+  updateAvailableSeatByClassId,
+};

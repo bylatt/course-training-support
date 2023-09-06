@@ -30,8 +30,9 @@ onMounted(() => {
             <p class="duration">
                 <i class="fa-regular fa-clock"></i> {{ course.duration }}
             </p>
-            <a href="/courses/{{ course.id }}" target="_blank" class="btn-primary">View Course <i
-                    class="fa-solid fa-chevron-right"></i></a>
+            <router-link :to="`/courses/${course.doc_id}`">
+                View Course <i class="fa-solid fa-chevron-right"></i>
+            </router-link>
         </div>
     </div>
 </template>
