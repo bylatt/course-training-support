@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 body{
     font-family: 'Kanit' sans-serif;
     color: var(--default-black, #000);
@@ -14,6 +15,8 @@ line-height: 24px; /* 150% */
     
     /* Box Shadows/Small */
     box-shadow: 0px 11px 20px 0px rgba(5, 16, 55, 0.10);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
 }
 
 .list-items .content{
@@ -34,10 +37,12 @@ line-height: 32px; /* 145.455% */
     
 }
 .list-items .content .duration{
-    
+    padding: 15px 0;
 }
 
-.button-primary{
+.btn-primary{
     border-radius: 6px;
 background: var(--default-primary-light, #EEB51F);
+color: #fff;
+padding: 16px 24px;
 }
