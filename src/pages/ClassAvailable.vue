@@ -48,10 +48,10 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import * as api from '../api.js'
-let courses = ref([])
+let classes = ref([])
 onMounted(() => {
     api.getClasses().then(result => {
-        courses.value = result
+        classes.value = result
         console.log(result)
     }).catch(err => {
         console.log(err)

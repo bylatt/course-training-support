@@ -63,9 +63,13 @@ export async function submitBooking(id) {
   return availableSeat;
 }
 
-async function getClasses() {
-  const snapshot = await getDoc(collection(db, "classes"));
-  return snapshot.map((doc) => doc.data());
+export async function getClasses() {
+  const snapshot = await getDocs(collection(db, "classes"));
+  const result = [];
+  snapshot.forEach((doc) => {
+    result.push({ id: doc.id, ...doc.data() });
+  });
+  return result;
 }
 
 async function getClasseById(id) {
