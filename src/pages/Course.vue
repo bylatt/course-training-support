@@ -16,6 +16,7 @@ onMounted(() => {
 
 <template>
     <div v-for="course in courses">
+        <img :src=course.image />
         <div class="title">
             <h3>{{ course.title }} - {{ course.duration }}</h3>
         </div>
