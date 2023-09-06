@@ -45,6 +45,22 @@
 </div>
 </template>
 
+<script setup>
+import { ref, onMounted } from 'vue'
+import * as api from '../api.js'
+let courses = ref([])
+onMounted(() => {
+    api.getClasses().then(result => {
+        courses.value = result
+        console.log(result)
+    }).catch(err => {
+        console.log(err)
+    })
+    console.log(api)
+    console.log('mounted')
+})
+</script>
+
 <style>
 /*** Body ***/
 
