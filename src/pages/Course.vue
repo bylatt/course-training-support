@@ -1,19 +1,20 @@
 <script setup>
+import "/src/assets/main.css";
 import { ref, onMounted } from "vue";
 import * as api from "../api.js";
 let courses = ref([]);
 onMounted(() => {
-  api
-    .getCourses()
-    .then((result) => {
-      courses.value = result;
-      console.log(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  console.log(api);
-  console.log("mounted");
+    api
+        .getCourses()
+        .then((result) => {
+            courses.value = result;
+            console.log(result);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    console.log(api);
+    console.log("mounted");
 
   // console.log("=========== Booking Testing ===========");
   // let bookingObj = {
@@ -34,15 +35,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-for="course in courses" class="list-items">
-    <img :src="course.image" alt="Random image" />
-    <div class="content">
-      <h3>{{ course.title }}</h3>
-      <p>{{ course.description }}</p>
-      <p><i class="fa-regular fa-clock"></i> {{ course.duration }}</p>
-      <a :href="'/courses/' + course.id" target="_blank" class="btn-primary"
-        >View Course <i class="fa-solid fa-chevron-right"></i
-      ></a>
+    <div class="com-logo"><img
+            src="https://i0.wp.com/odd-e.kr/wp-content/uploads/2018/12/odd-e_logo_500wd_transparent-1.png?resize=500%2C500&ssl=1" />
     </div>
-  </div>
+    <div v-for="course in courses" class="list-items">
+        <div><img :src=course.image /></div>
+        <div class="content">
+            <h3 class="title">{{ course.title }}</h3>
+            <p class="description">{{ course.description }}</p>
+            <p class="duration">
+                <i class="fa-regular fa-clock"></i> {{ course.duration }}
+            </p>
+            <router-link :to="`/courses/${course.doc_id}`">
+                View Course <i class="fa-solid fa-chevron-right"></i>
+            </router-link>
+        </div>
+    </div>
 </template>

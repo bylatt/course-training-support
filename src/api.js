@@ -28,7 +28,7 @@ export async function getCourses() {
   const snapshot = await getDocs(collection(db, "courses"));
   const result = [];
   snapshot.forEach((doc) => {
-    result.push({ id: doc.id, ...doc.data() });
+    result.push({ doc_id: doc.id, ...doc.data() });
   });
   return result;
 }
@@ -65,7 +65,7 @@ async function createBooking(obj) {
 }
 
 export async function submitBooking(obj) {
-  if(obj == null) {
+  if (obj == null) {
     console.log("no booking object");
   }
 
@@ -113,4 +113,12 @@ async function updateAvailableSeatByClassId(id) {
 }
 
 // export default { getCourses, getCourse };
-export default { getCourses, getCourse, getClasses, getClasseById, getTrainers, getTrainerById, updateAvailableSeatByClassId };
+export default {
+  getCourses,
+  getCourse,
+  getClasses,
+  getClasseById,
+  getTrainers,
+  getTrainerById,
+  updateAvailableSeatByClassId,
+};

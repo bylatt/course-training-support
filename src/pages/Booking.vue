@@ -2,8 +2,10 @@
 <template>
     <div>
       <h2>Booking</h2>
-      <h2>Class Name:</h2>
-
+      <h2>{{ this.data.className }}</h2>
+      <h2>Date: {{ this.data.date }}</h2>
+      <h2>Time: {{ this.data.time }}</h2>
+      <h2>Location: {{ this.data.location }}</h2>
       <form @submit.prevent="book">
         <div>
           <label for="name">Name:</label>
@@ -52,6 +54,13 @@ export default {
   data() {
     return {
       acceptTerms: false,
+      data: {
+        className: '',
+        date: '',
+        time: '',
+        location: '',
+        trainer: ''
+      },
       formData: {
           name: '',
           email: '',
