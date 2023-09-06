@@ -42,19 +42,6 @@ onMounted(() => {
   </div>
   <div class="course-container">
     <div v-for="course in courses" class="list-items">
-      <<<<<<< HEAD
-      <div><img :src="course.image" /></div>
-      <div class="content">
-        <h3 class="title">{{ course.title }}</h3>
-        <p class="description">{{ course.description }}</p>
-        <p class="duration">
-          <i class="fa-regular fa-clock"></i> {{ course.duration }}
-        </p>
-        <a href="/courses/{{ course.id }}" target="_blank" class="btn-primary"
-          >View Course <i class="fa-solid fa-chevron-right"></i
-        ></a>
-      </div>
-      =======
       <div><img :src="course.image" /></div>
       <div class="content">
         <h3 class="title">{{ course.title }}</h3>
@@ -67,7 +54,6 @@ onMounted(() => {
           View Course <font-awesome-icon icon="fa-solid fa-chevron-right" />
         </router-link>
       </div>
-      >>>>>>> 6c1c8f68b74d048fe31045f9cc2723a37388ce9d
     </div>
   </div>
 </template>
