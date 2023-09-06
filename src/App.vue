@@ -10,6 +10,9 @@
       <li>
         <router-link to="/about">About</router-link>
       </li>
+      <li>
+        <router-link to="/class_available">Class Available</router-link>
+      </li>
     </ul>
   </div>
 
