@@ -5,6 +5,7 @@ import Course from "../pages/Course.vue";
 import CourseDetail from "../pages/CourseDetail.vue";
 import Waiting from "../pages/WaitingList.vue";
 import ClassAvailable from "../pages/ClassAvailable.vue";
+import Booking from "../pages/Booking.vue";
 
 
 const routes = [
@@ -37,6 +38,11 @@ const routes = [
     path: "/class_available",
     name: "ClassAvailable",
     component: ClassAvailable,
+  },
+  {
+    path: "/booking",
+    name: "Booking",
+    component: Booking,
   }
 ];
 

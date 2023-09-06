@@ -19,6 +19,10 @@
       <li>
         <router-link to="/class_available">Class Available</router-link>
       </li>
+		<li>
+        <router-link to="/booking">Booking</router-link>
+
+      </li>
     </ul>
   </div>
 
