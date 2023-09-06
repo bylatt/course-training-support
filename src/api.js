@@ -54,7 +54,7 @@ async function createBooking(obj) {
     booking_date: "",
     class_id: "",
     course_id: 1,
-    email: obj.email
+    email: obj.email,
     name: obj.name,
     company: obj.company,
     location_name: obj.location_name
