@@ -1,0 +1,43 @@
+body{
+    font-family: 'Kanit' sans-serif;
+    color: var(--default-black, #000);
+font-family: Kanit;
+font-size: 17px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+}
+
+.list-items{
+    border-radius: 6px;
+    background: var(--default-white, #FFF);
+    
+    /* Box Shadows/Small */
+    box-shadow: 0px 11px 20px 0px rgba(5, 16, 55, 0.10);
+}
+
+.list-items .content{
+    padding:16px;
+}
+.list-items .content .title{
+    color: var(--default-black, #000);
+
+/* Default/Headings/h3 Bold */
+font-family: Kanit;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 145.455% */
+}
+.list-items .content .description{
+    
+    
+}
+.list-items .content .duration{
+    
+}
+
+.button-primary{
+    border-radius: 6px;
+background: var(--default-primary-light, #EEB51F);
+}
