@@ -27,5 +27,6 @@ onMounted(() => {
             <a href="/courses/{{ course.id }}" target="_blank" class="btn-primary">View Course <i
                     class="fa-solid fa-chevron-right"></i></a>
         </div>
+        <hr />
     </div>
 </template>
