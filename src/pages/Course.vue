@@ -15,6 +15,22 @@ onMounted(() => {
     });
   console.log(api);
   console.log("mounted");
+
+  // console.log("=========== Booking Testing ===========");
+  // let bookingObj = {
+  //     name: 'Fiilm Filmm',
+  //     email: 'paphawee@appsynth.net',
+  //     phoneNumber: '08123456789',
+  //     company: 'Appsynth',
+  //     classId: 'LzavWkfZAw1sqS4Hibz5',
+  //     className: 'Hello World',
+  //   }
+  // api.submitBooking(bookingObj).then(result => {
+  //   console.log(result)
+  // }).catch(err => {
+  //     console.log(err)
+  // })
+  // console.log("=========== Booking Testing ===========");
 });
 </script>
 
@@ -26,6 +42,7 @@ onMounted(() => {
   </div>
   <div class="course-container">
     <div v-for="course in courses" class="list-items">
+      <<<<<<< HEAD
       <div><img :src="course.image" /></div>
       <div class="content">
         <h3 class="title">{{ course.title }}</h3>
@@ -37,6 +54,20 @@ onMounted(() => {
           >View Course <i class="fa-solid fa-chevron-right"></i
         ></a>
       </div>
+      =======
+      <div><img :src="course.image" /></div>
+      <div class="content">
+        <h3 class="title">{{ course.title }}</h3>
+        <p class="description">{{ course.description }}</p>
+        <p class="duration">
+          <font-awesome-icon icon="fa-solid fa-clock" class="icon" />
+          {{ course.duration }}
+        </p>
+        <router-link :to="`/courses/${course.doc_id}`">
+          View Course <font-awesome-icon icon="fa-solid fa-chevron-right" />
+        </router-link>
+      </div>
+      >>>>>>> 6c1c8f68b74d048fe31045f9cc2723a37388ce9d
     </div>
   </div>
 </template>
