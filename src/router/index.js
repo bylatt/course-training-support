@@ -4,7 +4,7 @@ import About from "../pages/About.vue";
 import Course from "../pages/Course.vue";
 import Waiting from "../pages/WaitingList.vue";
 import ClassAvailable from "../pages/ClassAvailable.vue";
-mport Booking from "../pages/Booking.vue";
+import Booking from "../pages/Booking.vue";
 
 const routes = [
   {

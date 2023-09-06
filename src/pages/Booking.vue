@@ -16,6 +16,10 @@
           <input type="email" id="email" v-model="formData.email" required>
         </div>
         <div>
+          <label for="company">Company Name:</label>
+          <input type="company" id="company" v-model="formData.company" required>
+        </div>
+        <div>
       <label for="acceptTerms">
         <input type="checkbox" id="acceptTerms" v-model="acceptTerms">
         Accept Terms and Conditions
@@ -35,8 +39,8 @@ export default {
       formData: {
           name: '',
           email: '',
-          date: '',
-          time: '',
+          phoneNumber: '',
+          company: '',
         },
     };
   },
