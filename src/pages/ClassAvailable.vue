@@ -1,5 +1,8 @@
 <template>
-<div>Class Available</div>
+<h5 class="card-title">Course name</h5>
+<p class="card-text">Course subname</p>
+<p class="card-text">Course detail</p>
+<hr>
 <!-- Content-->
 <div class="container">
   <!-- Title-->
