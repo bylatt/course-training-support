@@ -38,6 +38,14 @@ export async function getCourse(id) {
   return docSnap.data();
 }
 
+export async function getClassName(id) {
+  const docRef = doc(db, "classes", id);
+  const docSnap = await getDoc(docRef);
+
+  let courseId = docSnap.data().courseId;
+  return getCourse(courseId).title;
+}
+
 export async function submitBooking(id) {
   const docRef = doc(db, "classes", id);
   const docSnap = await getDoc(docRef);
