@@ -24,7 +24,7 @@ onMounted(() => {
       <h3>{{ course.title }}</h3>
       <p>{{ course.description }}</p>
       <p><i class="fa-regular fa-clock"></i> {{ course.duration }}</p>
-      <a href="/courses/{{ course.id }}" target="_blank" class="btn-primary"
+      <a :href="'/courses/' + course.id" target="_blank" class="btn-primary"
         >View Course <i class="fa-solid fa-chevron-right"></i
       ></a>
     </div>
