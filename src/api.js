@@ -43,7 +43,7 @@ export async function getClassName(id) {
   let classes = await getClasseById(id);
   let courseId = classes.courseId;
 
-  return getCourse(courseId).title;
+  return await getCourse(courseId).title;
 }
 
 async function createBooking(obj) {
