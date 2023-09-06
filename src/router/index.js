@@ -40,7 +40,7 @@ const routes = [
     component: ClassAvailable,
   },
   {
-    path: "/booking",
+    path: "/booking/:id",
     name: "Booking",
     component: Booking,
   }
