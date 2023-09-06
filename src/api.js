@@ -38,17 +38,56 @@ export async function getCourse(id) {
   return docSnap.data();
 }
 
+export async function getClassName(id) {
+  const docRef = doc(db, "classes", id);
+  const docSnap = await getDoc(docRef);
+
+  let courseId = docSnap.data().courseId;
+  return getCourse(courseId).title;
+}
+
 export async function submitBooking(id) {
   const docRef = doc(db, "classes", id);
   const docSnap = await getDoc(docRef);
-  return docSnap.data();
 
-  // let availableSeat = docSnap.data().availableSeat;
-  // if (availableSeat > 0) {
-  //   // call booking
-  // } else {
-  //   // call waiting list
-  // }
+  let availableSeat = docSnap.data().availableSeat;
+
+  if (availableSeat > 0) {
+    // call booking
+  } else {
+    // call waiting list
+  }
+
+  return availableSeat;
+}
+
+async function getClasses() {
+  const snapshot = await getDoc(collection(db, "classes"));
+  return snapshot.map((doc) => doc.data());
+}
+
+async function getClasseById(id) {
+  const docRef = doc(db, "classes", id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+}
+
+async function getTrainers() {
+  const snapshot = await getDoc(collection(db, "trainer"));
+  return snapshot.map((doc) => doc.data());
+}
+
+async function getTrainerById(id) {
+  const docRef = doc(db, "trainer", id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
+}
+
+async function updateAvailableSeatByClassId(id) {
+  const docRef = doc(db, "classes", id);
+  const docSnap = await getDoc(docRef);
+  return docSnap.data();
 }
 
 // export default { getCourses, getCourse };
+export default { getCourses, getCourse, getClasses, getClasseById, getTrainers, getTrainerById, updateAvailableSeatByClassId };
