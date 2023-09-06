@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
 import About from "../pages/About.vue";
 import Course from "../pages/Course.vue";
-import Booking from "../pages/Booking.vue";
+import Waiting from "../pages/WaitingList.vue";
 import ClassAvailable from "../pages/ClassAvailable.vue";
+mport Booking from "../pages/Booking.vue";
+
 const routes = [
   {
     path: "/",
@@ -19,6 +21,11 @@ const routes = [
     path: "/courses",
     name: "Courses",
     component: Course,
+  },
+  {
+    path: "/waitingList",
+    name: "WaitingList",
+    component: Waiting,
   },
   {
     path: "/class_available",

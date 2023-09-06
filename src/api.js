@@ -1,6 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getDoc, getFirestore, query } from "firebase/firestore";
+import {
+  getDoc,
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCF6JVZVmChlFqQQ9lgPoYgpjzsCNbCXOE",
@@ -17,15 +23,19 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-async function getCourses() {
+export async function getCourses() {
   const snapshot = await getDocs(collection(db, "courses"));
-  return snapshot.map((doc) => doc.data());
+  const result = [];
+  snapshot.forEach((doc) => {
+    result.push({ id: doc.id, ...doc.data() });
+  });
+  return result;
 }
 
-async function getCourse(id) {
+export async function getCourse(id) {
   const docRef = doc(db, "courses", id);
   const docSnap = await getDoc(docRef);
   return docSnap.data();
 }
 
-export default { getCourses, getCourse };
+// export default { getCourses, getCourse };
